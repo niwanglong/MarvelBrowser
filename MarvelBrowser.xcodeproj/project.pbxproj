@@ -38,6 +38,7 @@
 		BB170EA19C8564DD2701B8B4 /* QCOFetchCharactersResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB170D246257B43E17269506 /* QCOFetchCharactersResponseModel.m */; };
 		BB170F76D08D50FCDBEA5B17 /* QCOCharacterSliceResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB170050E5FFBC5C90611586 /* QCOCharacterSliceResponseModel.m */; };
 		E181EFCFC5884632AE956C78 /* Pods_MarvelBrowserTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6C363FEE0298FE4419A2A99 /* Pods_MarvelBrowserTests.framework */; };
+		F7A4DC4D21C8F99F008B24DE /* MarvelKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4DC4C21C8F99F008B24DE /* MarvelKeys.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,8 @@
 		BB170FA6B264C91149AB4597 /* QCOCharacterResponseBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCOCharacterResponseBuilder.h; sourceTree = "<group>"; };
 		C6C363FEE0298FE4419A2A99 /* Pods_MarvelBrowserTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelBrowserTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1AB0C7A3C4B23EC2732D43D /* Pods_AcceptanceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AcceptanceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7A4DC4B21C8F99F008B24DE /* MarvelKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarvelKeys.h; sourceTree = "<group>"; };
+		F7A4DC4C21C8F99F008B24DE /* MarvelKeys.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarvelKeys.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,9 +170,9 @@
 				BB170F8EE62542DBD3B9EBD4 /* QCOFetchCharactersResponseBuilder.h */,
 				BB170EB9F28E5B3451977009 /* QCOFetchCharactersResponseBuilder.m */,
 				481247A41DEBB80D00B95720 /* QCOFetchCharactersResponseBuilderTests.m */,
-				48E81F701E7F4BCA002FD63A /* QCOParseFetchCharactersJSONDataTests.m */,
-				BB17095F93727D3936E89679 /* QCOParseFetchCharactersJSONData.m */,
 				BB1703E5188B131EF865F94B /* QCOParseFetchCharactersJSONData.h */,
+				BB17095F93727D3936E89679 /* QCOParseFetchCharactersJSONData.m */,
+				48E81F701E7F4BCA002FD63A /* QCOParseFetchCharactersJSONDataTests.m */,
 			);
 			name = "JSON Parsing";
 			sourceTree = "<group>";
@@ -232,6 +235,8 @@
 				BB170358F255C10B0921B68D /* QCONetworkRequest.m */,
 				BB1705874610B14F2C674B57 /* QCONetworkRequest.h */,
 				BB1702F31797FE303C7F9AE7 /* QCONetworkRequestTests.m */,
+				F7A4DC4B21C8F99F008B24DE /* MarvelKeys.h */,
+				F7A4DC4C21C8F99F008B24DE /* MarvelKeys.m */,
 			);
 			path = MarvelBrowser;
 			sourceTree = "<group>";
@@ -332,6 +337,7 @@
 					};
 					74CC7A831A1D9036007FCA40 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 7YRV37J88H;
 					};
 					74CC7A9C1A1D9036007FCA40 = {
 						CreatedOnToolsVersion = 6.1;
@@ -486,6 +492,7 @@
 				BB170EA19C8564DD2701B8B4 /* QCOFetchCharactersResponseModel.m in Sources */,
 				BB170745C014107EEA495350 /* QCOCharactersSliceResponseBuilder.m in Sources */,
 				BB1709E8E850D2558BD872B5 /* QCOBuilderUtils.m in Sources */,
+				F7A4DC4D21C8F99F008B24DE /* MarvelKeys.m in Sources */,
 				BB1701C2DC0FB8D46D2C2F5D /* QCOCharacterResponseBuilder.m in Sources */,
 				BB170E3A9499EC956E66D49D /* QCOCharacterResponseModel.m in Sources */,
 				BB17017093FA6A72F3C8D22E /* QCOParseFetchCharactersJSONData.m in Sources */,
@@ -670,6 +677,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7YRV37J88H;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -686,6 +694,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7YRV37J88H;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,

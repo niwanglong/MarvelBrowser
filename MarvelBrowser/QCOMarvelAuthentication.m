@@ -3,7 +3,7 @@
 
 #import "QCOMarvelAuthentication.h"
 
-#import "MarvelKeys.m"
+#import "MarvelKeys.h"
 #import <CommonCrypto/CommonDigest.h>
 
 
