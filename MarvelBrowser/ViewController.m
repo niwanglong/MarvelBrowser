@@ -23,6 +23,7 @@
             [[QCOFetchCharactersRequestModel alloc] initWithNamePrefix:@"Spider" pageSize:1 offset:0];
     [service fetchCharactersWithRequestModel:requestModel
                               networkRequest:[[QCONetworkRequest alloc] init]];
+    NSLog(@"test");
 }
 
 @end
