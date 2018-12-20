@@ -12,6 +12,7 @@
 - (instancetype)initWithSession:(NSURLSession *)session
         authParametersGenerator:(NSString *(^)(void))authParametersGenerator;
 - (void)fetchCharactersWithRequestModel:(QCOFetchCharactersRequestModel *)requestModel
-                         networkRequest:(QCONetworkRequest *)networkRequest;
+                         networkRequest:(QCONetworkRequest *)networkRequest
+                      completionHandler:(void(^)(NSData *data, NSURLResponse *response, NSError *error))completionHandler;
 
 @end

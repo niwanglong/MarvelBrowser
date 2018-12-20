@@ -28,14 +28,12 @@
 
 - (void)fetchCharactersWithRequestModel:(QCOFetchCharactersRequestModel *)requestModel
                          networkRequest:(QCONetworkRequest *)networkRequest
+                       completionHandler:(void(^)(NSData *data, NSURLResponse *response, NSError *error))completionHandler
 {
     NSURL *url = [self URLForRequestModel:requestModel];
     NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:url
                                                  completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        NSLog(@"error: %@", error);
-        NSLog(@"response: %@", response);
-        NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        NSLog(@"data: %@", str);
+                                                     completionHandler ? completionHandler(data,response,error) : nil;
     }];
     [networkRequest startTask:dataTask];
 }

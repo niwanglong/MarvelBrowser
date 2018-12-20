@@ -22,7 +22,13 @@
     QCOFetchCharactersRequestModel *requestModel =
             [[QCOFetchCharactersRequestModel alloc] initWithNamePrefix:@"Spider" pageSize:1 offset:0];
     [service fetchCharactersWithRequestModel:requestModel
-                              networkRequest:[[QCONetworkRequest alloc] init]];
+                              networkRequest:[[QCONetworkRequest alloc] init]
+                           completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                   NSLog(@"error: %@", error);
+                                   NSLog(@"response: %@", response);
+                                   NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                                   NSLog(@"data: %@", str);
+                              }];
 }
 
 @end

@@ -49,7 +49,7 @@
 
 - (void)testFetchCharacters_ShouldMakeDataTaskForMarvelEndpoint
 {
-    [sut fetchCharactersWithRequestModel:[self dummyRequestModel] networkRequest:nil];
+    [sut fetchCharactersWithRequestModel:[self dummyRequestModel] networkRequest:nil completionHandler:nil];
 
     [verify(mockSession) dataTaskWithURL:hasProperty(@"host", @"gateway.marvel.com")
                        completionHandler:anything()];
@@ -57,7 +57,7 @@
 
 - (void)testFetchCharacters_ShouldMakeDataTaskWithSecureConnection
 {
-    [sut fetchCharactersWithRequestModel:[self dummyRequestModel] networkRequest:nil];
+    [sut fetchCharactersWithRequestModel:[self dummyRequestModel] networkRequest:nil completionHandler:nil];
 
     [verify(mockSession) dataTaskWithURL:hasProperty(@"scheme", @"https")
                        completionHandler:anything()];
@@ -65,7 +65,7 @@
 
 - (void)testFetchCharacters_ShouldMakeDataTaskForCharactersAPI
 {
-    [sut fetchCharactersWithRequestModel:[self dummyRequestModel] networkRequest:nil];
+    [sut fetchCharactersWithRequestModel:[self dummyRequestModel] networkRequest:nil completionHandler:nil];
 
     [verify(mockSession) dataTaskWithURL:hasProperty(@"path", @"/v1/public/characters")
                        completionHandler:anything()];
@@ -76,7 +76,7 @@
     QCOFetchCharactersRequestModel *requestModel = [[QCOFetchCharactersRequestModel alloc]
             initWithNamePrefix:@"NAME" pageSize:10 offset:30];
 
-    [sut fetchCharactersWithRequestModel:requestModel networkRequest:nil];
+    [sut fetchCharactersWithRequestModel:requestModel networkRequest:nil completionHandler:nil];
 
     [verify(mockSession) dataTaskWithURL:hasQuery(@"nameStartsWith", @"NAME")
                        completionHandler:anything()];
@@ -87,7 +87,7 @@
     QCOFetchCharactersRequestModel *requestModel = [[QCOFetchCharactersRequestModel alloc]
             initWithNamePrefix:@"ab cd" pageSize:10 offset:30];
 
-    [sut fetchCharactersWithRequestModel:requestModel networkRequest:nil];
+    [sut fetchCharactersWithRequestModel:requestModel networkRequest:nil completionHandler:nil];
 
     [verify(mockSession) dataTaskWithURL:hasQuery(@"nameStartsWith", @"ab cd")
                        completionHandler:anything()];
@@ -98,7 +98,7 @@
     QCOFetchCharactersRequestModel *requestModel = [[QCOFetchCharactersRequestModel alloc]
             initWithNamePrefix:@"DUMMY" pageSize:10 offset:30];
 
-    [sut fetchCharactersWithRequestModel:requestModel networkRequest:nil];
+    [sut fetchCharactersWithRequestModel:requestModel networkRequest:nil completionHandler:nil];
 
     [verify(mockSession) dataTaskWithURL:hasQuery(@"limit", @"10")
                        completionHandler:anything()];
@@ -109,7 +109,7 @@
     QCOFetchCharactersRequestModel *requestModel = [[QCOFetchCharactersRequestModel alloc]
             initWithNamePrefix:@"DUMMY" pageSize:10 offset:30];
 
-    [sut fetchCharactersWithRequestModel:requestModel networkRequest:nil];
+    [sut fetchCharactersWithRequestModel:requestModel networkRequest:nil completionHandler:nil];
 
     [verify(mockSession) dataTaskWithURL:hasQuery(@"offset", @"30")
                        completionHandler:anything()];
@@ -123,7 +123,7 @@
                                                  return @"&FOO=BAR";
                                              }];
 
-    [sutWithAuthParameters fetchCharactersWithRequestModel:[self dummyRequestModel] networkRequest:nil];
+    [sutWithAuthParameters fetchCharactersWithRequestModel:[self dummyRequestModel] networkRequest:nil completionHandler:nil];
 
     [verify(mockSession) dataTaskWithURL:hasQuery(@"FOO", @"BAR")
                        completionHandler:anything()];
@@ -135,7 +135,8 @@
             willReturn:mockDataTask];
 
     [sut fetchCharactersWithRequestModel:[self dummyRequestModel]
-                          networkRequest:[[QCONetworkRequest alloc] init]];
+                          networkRequest:[[QCONetworkRequest alloc] init]
+                          completionHandler:nil] ;
 
     [verify(mockDataTask) resume];
 }
